@@ -3,10 +3,12 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [screen, setScreen] = useState(0);
+  // set useState to an array
+  // push and pop digits from the array
+  const [screen, setScreen] = useState([0]);
 
   let clearScreen = () => {
-    setScreen(0);
+    setScreen([0]);
   };
 
   let deleteChar = screen => {
@@ -20,49 +22,76 @@ function App() {
   };
 
   let seven = () => {
-    let arr = Array.from(String(screen), Number);
-    // let newNum = Array.from(String(screen));
-    if (screen === 0) {
-      setScreen(7);
+    if (screen[0] === 0) {
+      setScreen([7]);
       console.log("yaaaaa", screen);
     } else {
-      console.log("arrthing", arr, newNum);
-      newNum.push(7);
-      console.log("arr", arr);
-      setScreen(newNum.join(...arr));
+      setScreen([...screen, 7]);
     }
   };
 
   let eight = () => {
-    setScreen(8);
+    if (screen[0] === 0) {
+      setScreen([8]);
+    } else {
+      setScreen([...screen, 8]);
+    }
   };
 
   let nine = () => {
-    setScreen(9);
+    if (screen[0] === 0) {
+      setScreen([9]);
+    } else {
+      setScreen([...screen, 9]);
+    }
   };
 
   let four = () => {
-    setScreen(4);
+    if (screen[0] === 0) {
+      setScreen([4]);
+    } else {
+      setScreen([...screen, 4]);
+    }
   };
 
   let five = () => {
-    setScreen(5);
+    if (screen[0] === 0) {
+      setScreen([5]);
+    } else {
+      setScreen([...screen, 5]);
+    }
   };
 
   let six = () => {
-    setScreen(6);
+    if (screen[0] === 0) {
+      setScreen([6]);
+    } else {
+      setScreen([...screen, 6]);
+    }
   };
 
   let one = () => {
-    setScreen(1);
+    if (screen[0] === 0) {
+      setScreen([1]);
+    } else {
+      setScreen([...screen, 1]);
+    }
   };
 
   let two = () => {
-    setScreen(2);
+    if (screen[0] === 0) {
+      setScreen([2]);
+    } else {
+      setScreen([...screen, 2]);
+    }
   };
 
   let three = () => {
-    setScreen(3);
+    if (screen[0] === 0) {
+      setScreen([3]);
+    } else {
+      setScreen([...screen, 3]);
+    }
   };
 
   let negative = screen => {
@@ -75,7 +104,11 @@ function App() {
   };
 
   let zero = () => {
-    setScreen(0);
+    if (screen[0] === 0) {
+      setScreen([0]);
+    } else {
+      setScreen([...screen, 0]);
+    }
   };
 
   let point = () => {
@@ -104,7 +137,7 @@ function App() {
           <h2 onClick={four}>4</h2>
           <h2 onClick={five}>5</h2>
           <h2 onClick={six}>6</h2>
-          <h2 onClick={seven}>1</h2>
+          <h2 onClick={one}>1</h2>
           <h2 onClick={eight}>2</h2>
           <h2 onClick={nine}>3</h2>
           <h2 onClick={negative}>+/-</h2>
